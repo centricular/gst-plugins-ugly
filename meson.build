@@ -1,12 +1,24 @@
-project('gstreamer-plugins-ugly', 'c', version : '1.4.5',
-  default_options : ['c_std=gnu99', 'warning_level=1'])
+project('gst-plugins-ugly', 'c',
+  version : '1.7.1.1',
+  meson_version : '>= 0.27.0',
+  default_options : [ 'warning_level=1',
+                      'c_std=gnu99',
+                      'buildtype=debugoptimized' ])
 
-version_str = meson.project_version()
-varr = version_str.split('.')
-version_major = varr[0]
-version_minor = varr[1]
-version_micro = varr[2]
-version_nano = 1
+gst_version = meson.project_version()
+version_arr = gst_version.split('.')
+gst_version_major = version_arr[0]
+gst_version_minor = version_arr[1]
+gst_version_micro = version_arr[2]
+if version_arr.length() == 4
+  gst_version_nano = version_arr[3]
+else
+  gst_version_nano = 0
+endif
+
+glib_req = '>= 2.40.0'
+gst_req = '>= @0@.@1@.0'.format(gst_version_major, gst_version_minor)
+
 api_version = '1.0'
 
 cc = meson.get_compiler('c')
@@ -134,8 +146,8 @@ configure_file(input : 'config.h.meson',
   output : 'config.h',
   configuration : cdata)
 
-core_args = ['-DHAVE_CONFIG_H']
-core_incs = include_directories('.', 'gst-libs')
+ugly_args = [ '-DHAVE_CONFIG_H' ]
+ugly_incs = include_directories('.', 'gst-libs')
 
 subdir('gst')
 subdir('ext')

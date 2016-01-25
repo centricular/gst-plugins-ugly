@@ -15,7 +15,9 @@ real_sources = [
 
 gstrmdemux = library('gstrmdemux',
   real_sources,
-  c_args : core_args,
-  include_directories : core_incs,
+  c_args : ugly_args,
+  include_directories : ugly_incs,
   dependencies : [gstbase_dep, gstrtsp_dep, gstsdp_dep, gstpbutils_dep],
+  install : true,
+  install_dir : '@0@/gstreamer-1.0'.format(get_option('libdir')),
 )
