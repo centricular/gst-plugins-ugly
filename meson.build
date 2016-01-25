@@ -132,13 +132,10 @@ zlib_dep = dependency('zlib')
 gio_dep = dependency('gio-2.0')
 #gl_dep = dependency('gl')
 x264_dep = dependency('x264')
+a52_dep = find_library('a52', required : false)
 
 if orc_dep.found()
-  cdata.set('HAVE_ORC', 1)
-endif
-
-if x264_dep.found()
-  cdata.set('HAVE_X264', 1)
+  cdata.set('HAVE_ORC', 1) # used by a52dec for cpu detection
 endif
 
 
