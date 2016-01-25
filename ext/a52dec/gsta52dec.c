@@ -40,8 +40,11 @@
 #include <string.h>
 
 #include <stdlib.h>
+#ifdef HAVE_STDINT_H
+#include <stdint.h>
+#else
 #include "_stdint.h"
-
+#endif
 #include <gst/gst.h>
 
 #include <a52dec/a52.h>
