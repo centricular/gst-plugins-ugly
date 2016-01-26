@@ -23,13 +23,20 @@
 #include "config.h"
 #endif
 
-#include "_stdint.h"
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
 #include <string.h>
 #include <errno.h>
+
+#ifdef HAVE_STDINT_H
+#include <stdint.h>
+#else
+#define uint8_t guint8
+#define uint16_t guint16
+#define uint32_t guint32
+#define uint64_t guint64
+#endif
 
 #include "dvdreadsrc.h"
 
