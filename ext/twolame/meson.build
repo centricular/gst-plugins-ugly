@@ -5,6 +5,6 @@ if twolame_dep.found()
     include_directories : ugly_incs,
     dependencies : [ twolame_dep, gstaudio_dep ],
     install : true,
-    install_dir : '@0@/gstreamer-1.0'.format(get_option('libdir')),
+    install_dir : plugins_install_dir,
   )
 endif

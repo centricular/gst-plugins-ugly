@@ -12,6 +12,6 @@ if lame_dep.found() and cc.has_function('lame_init', prefix : '#include <lame/la
     include_directories : ugly_incs,
     dependencies : [ lame_dep, gstaudio_dep ],
     install : true,
-    install_dir : '@0@/gstreamer-1.0'.format(get_option('libdir')),
+    install_dir : plugins_install_dir,
   )
 endif
