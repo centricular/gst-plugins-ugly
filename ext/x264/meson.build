@@ -8,5 +8,5 @@ gstx264 = library('gstx264',
   include_directories : ugly_incs,
   dependencies : [ x264_dep, gstbase_dep, gstvideo_dep, gstpbutils_dep ],
   install : true,
-  install_dir : '@0@/gstreamer-1.0'.format(get_option('libdir')),
+    install_dir : plugins_install_dir,
 )

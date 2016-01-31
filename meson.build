@@ -21,6 +21,8 @@ gst_req = '>= @0@.@1@.0'.format(gst_version_major, gst_version_minor)
 
 api_version = '1.0'
 
+plugins_install_dir = '@0@/gstreamer-1.0'.format(get_option('libdir'))
+
 cc = meson.get_compiler('c')
 cdata = configuration_data()
 check_headers = [

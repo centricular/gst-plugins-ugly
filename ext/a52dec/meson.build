@@ -5,6 +5,6 @@ if a52_dep.found() and cc.has_function('a52_init', prefix : '#include <stdint.h>
     include_directories : ugly_incs,
     dependencies : [ a52_dep, orc_dep, gstaudio_dep ],
     install : true,
-    install_dir : '@0@/gstreamer-1.0'.format(get_option('libdir')),
+    install_dir : plugins_install_dir,
   )
 endif
