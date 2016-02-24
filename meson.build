@@ -79,7 +79,6 @@ check_functions = [
 # check token HAVE_LAME
 # check token HAVE_MAD
 # check token HAVE_MPEG2DEC
-# check token HAVE_ORC
 # check token HAVE_PRETTY_FUNCTION
 # check token HAVE_RDTSC
 # check token HAVE_SIDPLAY
@@ -123,7 +122,7 @@ gstrtsp_dep = dependency('gstreamer-rtsp-1.0', version : gst_req)
 gstcheck_dep = dependency('gstreamer-check-1.0', version : gst_req)
 gstcontroller_dep = dependency('gstreamer-controller-1.0', version : gst_req)
 
-orc_dep = dependency('orc-0.4', version : '>= 0.4.16')
+orc_dep = dependency('orc-0.4', version : '>= 0.4.16', required : false)
 x264_dep = dependency('x264', required : false)
 a52_dep = find_library('a52', required : false)
 amrnb_dep = dependency('opencore-amrnb', version : '>= 0.1.3', required : false)
