@@ -107,6 +107,8 @@ gstcontroller_dep = dependency('gstreamer-controller-1.0', version : gst_req)
 orc_dep = dependency('orc-0.4', version : '>= 0.4.16', required : false)
 if orc_dep.found()
   cdata.set('HAVE_ORC', 1) # used by a52dec for cpu detection
+else
+  cdata.set('DISABLE_ORC', 1)
 endif
 
 configure_file(input : 'config.h.meson',
