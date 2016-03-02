@@ -123,20 +123,6 @@ gstcheck_dep = dependency('gstreamer-check-1.0', version : gst_req)
 gstcontroller_dep = dependency('gstreamer-controller-1.0', version : gst_req)
 
 orc_dep = dependency('orc-0.4', version : '>= 0.4.16', required : false)
-x264_dep = dependency('x264', required : false)
-a52_dep = find_library('a52', required : false)
-amrnb_dep = dependency('opencore-amrnb', version : '>= 0.1.3', required : false)
-amrwb_dep = dependency('opencore-amrwb', version : '>= 0.1.3', required : false)
-cdio_dep = dependency('libcdio', version : '>= 0.76', required : false)
-dvdread_dep = dependency('dvdread', version : '>= 0.5.0', required : false)
-lame_dep = find_library('mp3lame', required : false)
-mad_dep = dependency('mad', version : '>= 0.15', required : false)
-if not mad_dep.found() and cc.has_function('mad_decoder_finish', prefix : '#include <mad.h>')
-  mad_dep = find_library('mad', required : false)
-endif
-mpeg2_dep = dependency('libmpeg2', version : '>= 0.4.0', required : false)
-twolame_dep = dependency('twolame', version : '>= 0.3.10', required : false)
-
 if orc_dep.found()
   cdata.set('HAVE_ORC', 1) # used by a52dec for cpu detection
 endif

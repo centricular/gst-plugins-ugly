@@ -1,9 +1,11 @@
+dvdread_dep = dependency('dvdread', version : '>= 0.5.0', required : false)
+
 if dvdread_dep.found()
   dvdread = library('gstdvdread',
-    'dvdreadsrc.c',
+    ['dvdreadsrc.c'],
     c_args : ugly_args,
     include_directories : ugly_incs,
-    dependencies : [ dvdread_dep, gstbase_dep ],
+    dependencies : [gstbase_dep, dvdread_dep],
     install : true,
     install_dir : plugins_install_dir,
   )
