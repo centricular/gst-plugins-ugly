@@ -47,12 +47,6 @@ foreach h : check_headers
 endforeach
 
 check_functions = [
-# check token HAVE_A52DEC
-# check token HAVE_AMRNB
-# check token HAVE_AMRWB
-# check token HAVE_CDIO
-# check token HAVE_CFLOCALECOPYCURRENT
-# check token HAVE_CFPREFERENCESCOPYAPPVALUE
 # check token HAVE_CPU_ALPHA
 # check token HAVE_CPU_ARM
 # check token HAVE_CPU_CRIS
@@ -68,21 +62,9 @@ check_functions = [
 # check token HAVE_CPU_SPARC
 # check token HAVE_CPU_X86_64
   ['HAVE_DCGETTEXT', 'dcgettext', '#include<libintl.h>'],
-# check token HAVE_DOWHILE_MACROS
-# check token HAVE_DVDREAD
 # check token HAVE_EXPERIMENTAL
 # check token HAVE_EXTERNAL
-# check token HAVE_FUNC
-# check token HAVE_FUNCTION
 # check token HAVE_GETTEXT
-# check token HAVE_ICONV
-# check token HAVE_LAME
-# check token HAVE_MAD
-# check token HAVE_MPEG2DEC
-# check token HAVE_PRETTY_FUNCTION
-# check token HAVE_RDTSC
-# check token HAVE_SIDPLAY
-# check token HAVE_TWOLAME
 # check token HAVE_VALGRIND
 ]
 
