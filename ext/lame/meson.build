@@ -1,4 +1,4 @@
-lame_dep = find_library('mp3lame', required : false)
+lame_dep = cc.find_library('mp3lame', required : false)
 
 if lame_dep.found() and cc.has_function('lame_init', prefix : '#include <lame/lame.h>')
   lame_extra_c_args = []

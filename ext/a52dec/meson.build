@@ -1,4 +1,4 @@
-a52_dep = find_library('a52', required : false)
+a52_dep = cc.find_library('a52', required : false)
 
 if a52_dep.found() and cc.has_function('a52_init', prefix : '#include <stdint.h>\n#include <a52dec/a52.h>')
   a52dec = library('gsta52dec',
