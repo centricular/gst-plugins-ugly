@@ -1,6 +1,6 @@
 mad_dep = dependency('mad', version : '>= 0.15', required : false)
 if not mad_dep.found() and cc.has_function('mad_decoder_finish', prefix : '#include <mad.h>')
-  mad_dep = find_library('mad', required : false)
+  mad_dep = cc.find_library('mad', required : false)
 endif
 
 if mad_dep.found()
