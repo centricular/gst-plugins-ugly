@@ -16,7 +16,7 @@ real_sources = [
 gstrmdemux = library('gstrmdemux',
   real_sources,
   c_args : ugly_args,
-  include_directories : ugly_incs,
+  include_directories : [configinc, libsinc],
   dependencies : [gstbase_dep, gstrtsp_dep, gstsdp_dep, gstpbutils_dep],
   install : true,
   install_dir : plugins_install_dir,

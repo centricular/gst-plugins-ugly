@@ -5,7 +5,7 @@ dvdpl_sources = [
 gstdvdlpcmdec = library('gstdvdlpcmdec',
   dvdpl_sources,
   c_args : ugly_args,
-  include_directories : ugly_incs,
+  include_directories : [configinc],
   dependencies : [gstbase_dep, gstaudio_dep],
   install : true,
   install_dir : plugins_install_dir,
