@@ -6,7 +6,7 @@ xing_sources = [
 gstxingmux = library('gstxingmux',
   xing_sources,
   c_args : ugly_args,
-  include_directories : ugly_incs,
+  include_directories : [configinc],
   dependencies : [gstbase_dep],
   install : true,
   install_dir : plugins_install_dir,

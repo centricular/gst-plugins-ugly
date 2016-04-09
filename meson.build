@@ -61,7 +61,7 @@ check_functions = [
 # check token HAVE_CPU_S390
 # check token HAVE_CPU_SPARC
 # check token HAVE_CPU_X86_64
-  ['HAVE_DCGETTEXT', 'dcgettext', '#include<libintl.h>'],
+  ['HAVE_DCGETTEXT', 'dcgettext'],
 # check token HAVE_EXPERIMENTAL
 # check token HAVE_EXTERNAL
 # check token HAVE_GETTEXT
@@ -69,7 +69,7 @@ check_functions = [
 ]
 
 foreach f : check_functions
-  if cc.has_function(f.get(1), prefix : f.get(2))
+  if cc.has_function(f.get(1))
     cdata.set(f.get(0), 1)
   endif
 endforeach
@@ -115,8 +115,11 @@ configure_file(input : 'config.h.meson',
   output : 'config.h',
   configuration : cdata)
 
-ugly_args = [ '-DHAVE_CONFIG_H' ]
-ugly_incs = include_directories('.', 'gst-libs')
+ugly_args = ['-DHAVE_CONFIG_H']
+configinc = include_directories('.')
+libsinc = include_directories('gst-libs')
 
 subdir('gst')
 subdir('ext')
+# TODO
+#subdir('tests')
