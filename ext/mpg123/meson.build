@@ -8,6 +8,7 @@ if mpg123_dep.found()
   gstmpg123 = library('gstmpg123',
     mpg123_sources,
     c_args : ugly_args,
+    link_args : noseh_link_args,
     include_directories : [configinc],
     dependencies : [gstaudio_dep, mpg123_dep],
     install : true,

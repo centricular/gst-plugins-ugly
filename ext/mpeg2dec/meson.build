@@ -4,6 +4,7 @@ if mpeg2_dep.found()
   mpeg2dec = library('gstmpeg2dec',
     ['gstmpeg2dec.c'],
     c_args : ugly_args,
+    link_args : noseh_link_args,
     include_directories : [configinc],
     dependencies : [gstvideo_dep, mpeg2_dep],
     install : true,

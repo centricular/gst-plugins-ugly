@@ -5,6 +5,7 @@ if gmodule_dep.found() and dvdread_dep.found()
   dvdread = library('gstdvdread',
     ['dvdreadsrc.c'],
     c_args : ugly_args,
+    link_args : noseh_link_args,
     include_directories : [configinc, libsinc],
     dependencies : [gstbase_dep, gmodule_dep, dvdread_dep],
     install : true,
