@@ -28,12 +28,11 @@
 #include "config.h"
 #endif
 
-#include <stdlib.h>
 #ifdef HAVE_STDINT_H
 #include <stdint.h>
-#else
-#include "_stdint.h"
 #endif
+
+#include <stdlib.h>
 #include <string.h>
 
 #include <gst/rtsp/gstrtspextension.h>

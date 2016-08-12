@@ -3,7 +3,6 @@
 #include <config.h>
 #endif
 #include <gst/gst.h>
-#include <unistd.h>
 #include <fcntl.h>
 #include <inttypes.h>
 
